@@ -1,11 +1,11 @@
 import org.junit.jupiter.api.Test;
-import org.example.method;
+import org.example.MathMethods;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class TestMethods {
+public class TestMathMethods {
 
-    method methods = new method();
+    MathMethods methods = new MathMethods();
     @Test
     public void testGcd() {
         // Test some pairs of integers with known GCD values

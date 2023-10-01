@@ -2,8 +2,10 @@ package org.example;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
+import java.io.File;
 
-public class method {
+
+public class MathMethods {
     // 1st method
     public static boolean isPrime(int num) {
         if (num <= 1) {
@@ -75,16 +77,18 @@ public class method {
         }
         return Math.sqrt(number);
     }
-    public static void SimpleInputValidationVulnerability(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter a number: ");
-        String userInput = scanner.nextLine();
 
-        // Intentionally vulnerable code (does not validate input)
-        int number = Integer.parseInt(userInput);
-        System.out.println("You entered: " + number);
 
-        scanner.close();
+    public class PathTraversalVulnerability {
+        public static void main(String[] args) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter a file path: ");
+            String filePath = scanner.nextLine();
+
+            File file = new File(filePath); // Intentionally vulnerable code (no path validation)
+            System.out.println("File exists: " + file.exists());
+
+            scanner.close();
+        }
     }
-
 }
